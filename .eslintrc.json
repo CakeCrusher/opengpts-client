@@ -1,3 +1,31 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "indent": ["error", 2], // Enforce 2 space indentation
+    "no-unused-vars": "warn", // Warn about unused variables
+    "arrow-body-style": ["error", "as-needed"], // Require braces in arrow function body only when needed
+    "react/jsx-curly-spacing": "off", // Enforce spacing in JSX curly braces
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"], // TypeScript specific rule for unused variables
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically detect the React version
+    }
+  }
 }
